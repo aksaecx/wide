@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis HTML5 - WIDYAWATI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #cc0000; /* Merah khas berita/CNN */
+            --secondary-color: #333;
+            --text-color: #444;
+            --light-grey: #f9f9f9;
+            --border-color: #eee;
+            --accent-blue: #007bff;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 25px;
+            color: var(--text-color);
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 25px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: 'Merriweather', serif;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        main {
+            padding: 0 25px 30px 25px;
+        }
+
+        section {
+            margin-bottom: 35px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            background-color: var(--light-grey);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            border-left-color: var(--accent-blue);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h2::before {
+            content: "▪";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        p strong {
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        footer time {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tugas Esai Singkat: Analisis Struktur HTML5 Semantik</h1>
+        <p><strong>Nama:</strong> WIDYAWATI</p>
+        <p><strong>NIM:</strong> 132410011</p>
+        <p><strong>Website yang Dianalisis:</strong> CNNIndonesia.com (<a href="https://www.cnnindonesia.com/" style="color: #fff; text-decoration: underline;">https://www.cnnindonesia.com/</a>)</p>
+    </header>
+
+    <main>
+        <section id="analisis-struktur">
+            <h2>1. Identifikasi Elemen Struktural Utama</h2>
+            <p>Pada halaman utama CNNIndonesia.com, elemen struktural utama HTML5 digunakan dengan cukup baik.
+                Elemen <code>&lt;header&gt;</code> digunakan di bagian paling atas halaman untuk membungkus logo utama "CNN Indonesia" dan juga menu navigasi utama.
+                Di dalam <code>&lt;header&gt;</code> tersebut, terdapat elemen <code>&lt;nav&gt;</code> yang secara semantik membungkus daftar link kategori berita (seperti Nasional, Internasional, Ekonomi, Olahraga, dll.).
+                Seluruh konten utama halaman, mulai dari bagian "Berita Utama" hingga berbagai rubrik di bawahnya, dibungkus dengan rapi oleh satu elemen <code>&lt;main&gt;</code>.
+                Di bagian paling bawah halaman, terdapat elemen <code>&lt;footer&gt;</code> yang berisi informasi pelengkap seperti link redaksi, pedoman media siber, info karir, media sosial, dan hak cipta.
+                Elemen <code>&lt;aside&gt;</code> juga ditemukan dan digunakan secara tepat. Elemen ini dipakai untuk membungkus konten di *sidebar* (kolom samping), seperti "Berita Terpopuler" dan "Advertorial", yang merupakan konten tambahan di luar alur berita utama.</p>
+        </section>
+
+        <section id="analisis-konten">
+            <h2>2. Analisis Konten Artikel</h2>
+            <p>Di dalam elemen <code>&lt;main&gt;</code>, CNNIndonesia.com menstrukturkan setiap unit beritanya (yang terdiri dari gambar, judul, dan terkadang ringkasan singkat) menggunakan elemen <code>&lt;article&gt;</code>.
+                Pilihan ini <strong>sudah sangat tepat</strong>. Menurut spesifikasi HTML5, elemen <code>&lt;article&gt;</code> ditujukan untuk konten yang mandiri, dapat didistribusikan secara independen, dan masuk akal jika dibaca terpisah dari konteks website (seperti dalam RSS feed). Setiap cuplikan berita di halaman utama memenuhi kriteria ini. Penggunaan <code>&lt;section&gt;</code> akan kurang tepat karena <code>&lt;section&gt;</code> lebih berfungsi untuk mengelompokkan konten yang terkait secara tematik (misalnya, mengelompokkan beberapa <code>&lt;article&gt;</code> ke dalam satu "Rubrik Olahraga").</p>
+        </section>
+
+        <section id="analisis-heading">
+            <h2>3. Struktur Heading (Judul)</h2>
+            <p>Struktur *heading* di halaman ini sudah logis. Terdapat satu elemen <code>&lt;h1&gt;</code> di halaman utama, yang isinya adalah nama *brand* atau identitas situs itu sendiri, yaitu "CNN Indonesia" (biasanya dalam bentuk logo). Ini adalah praktik umum dan logis untuk halaman utama, karena <code>&lt;h1&gt;</code> menandakan topik utama dari keseluruhan halaman.
+                Selanjutnya, judul-judul untuk setiap rubrik berita (seperti "Berita Utama", "Nasional", "Terkini") menggunakan <code>&lt;h2&gt;</code>. Kemudian, judul dari masing-masing berita di dalam <code>&lt;article&gt;</code> menggunakan <code>&lt;h3&gt;</code>. Urutan hierarki (h1 -> h2 -> h3) ini sudah benar, berurutan, dan membantu menciptakan kerangka dokumen (document outline) yang jelas bagi mesin pencari dan teknologi pembantu (assistive technologies).</p>
+        </section>
+
+        <section id="kesimpulan">
+            <h2>4. Kesimpulan Sederhana</h2>
+            <p>Secara keseluruhan, penerapan HTML5 semantik pada website CNNIndonesia.com sudah sangat baik dan sesuai standar. Penggunaan elemen struktural (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;aside&gt;</code>) sudah tepat sesuai fungsinya, dan penggunaan <code>&lt;article&gt;</code> untuk unit berita adalah implementasi yang benar. Struktur *heading* juga logis dan hierarkis.
+                Satu hal terpenting yang saya pelajari dari analisis ini adalah bagaimana elemen semantik bukan hanya soal "tampilan", tetapi soal memberi "makna" dan "konteks" pada konten. Penggunaan elemen yang tepat seperti <code>&lt;article&gt;</code> membantu memisahkan mana konten berita yang independen dan mana yang hanya pengelompokan (<code>&lt;section&gt;</code>), yang sangat penting untuk aksesibilitas dan SEO.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tugas diselesaikan pada: <time datetime="2025-11-07">7 November 2025</time></p>
+    </footer>
+
+</body>
+</html>
